@@ -1,14 +1,17 @@
+/*Hiding the scrollbar for the mainpage since its in the main panel*/
 html {
   overflow: hidden;
   height: 100%;
 }
 
+/*Hiding the scrollbar and removing whitespace around the edges*/
 body {
   overflow: hidden;
   margin: 0;
   height: 100%;
 }
 
+/*Setting up the navigation to allow for it to allows stay at top of screen*/
 #navigation-bar {
   position: sticky;
   top: 0;
@@ -17,6 +20,7 @@ body {
   width: 100%;
 }
 
+/*Setting the look of the buttons in the navigation bar only*/
 #navigation-bar button {
 	background-color:#16495c;
 	display:inline-block;
@@ -30,10 +34,13 @@ body {
 	text-shadow:0px 2px 0px #5b6178;
 }
 
+/*setting up the dropdown position*/
 .dropdown {
   display: inline-block;
   position: relative;
 }
+
+/*Setting up contents to not be shown until hovered over*/
 .dropdown-content {
   display: none;
   position: relative;
@@ -41,9 +48,13 @@ body {
   overflow: auto;
   box-shadow: 0px 10px 10px 0px #16495c;
 }
+
+/*Setting up the hover knowledge*/
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/*Setting up the look of the dropdown choices*/
 .dropdown-content a {
   display: block;
   background-color: #16495c;
@@ -53,12 +64,15 @@ body {
   padding: 5px;
   text-decoration: none;
 }
+
+/*The color that appears when hovering over a choice*/
 .dropdown-content a:hover {
   color: #FFFFFF;
   background-color: #00A4BD;
 }
 
-#more-content {
+/*Setting up the main part of the screen display settings*/
+#more-view {
   background-color: #1d1d1d;
   color: whitesmoke;
   overflow-y: scroll;
@@ -67,6 +81,7 @@ body {
   height: 93vh;
 }
 
+/*Setting up how the post squares look*/
 figure {
   border : 1px solid #ddd;
   border-style: solid;
@@ -76,6 +91,7 @@ figure {
   width: 45%;
 }
 
+/*Setting up how the caption looks for the post squares*/
 figcaption {
   background-color: white;
 	color:black;
@@ -88,6 +104,7 @@ figcaption {
   padding: 20px;
 }
 
+/*Setting up the look of the buttons inside of the post squares*/
 figcaption button {
   background-color:#287f9e;
   color:#ffffff;
@@ -100,7 +117,65 @@ figcaption button {
   height: 45px;
 }
 
+/*Basic image setting to make them work with figures*/
 img {
   margin: 4px;
   width: 99%;
+}
+
+/*Table settings for the gallery page*/
+table, tr, td {
+  border: 10px solid black;
+  background-color: #1d1d1d;
+}
+
+/*Color for the caption*/
+caption {
+  background-color: #1d1d1d;
+  color:#ffffff;
+}
+
+/*Table data settings*/
+th, td {
+  padding: 5px;
+  width: 33%;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #16495c;
+  color: black;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 5px solid black;
+  width: 45%; /* Could be more or less, depending on screen size */
+  height: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
