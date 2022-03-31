@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/main.css">
-    <title>Scene Memes</title>
-</head>
-<body>
-    <div id="header" style="text-align: center;">
-        <h1>Scene Memes</h1>
-    </div>
-    
-    <div id="content">
-        <div id= "SignUp">
-            <p>Email: 
-                <input type="email" id="EmailAddress"></input>
-            </p>
-            <p>Username: 
-                <input type="text" id="Username"></input>
-            </p>
-            <p>Date of Birth: 
-                <input type="date" id="BirthDate"></input>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/main.css">
+        <title>Scene Memes</title>
+    </head>
+    <body>
+        <div id="header" style="text-align: center;">
+            <h1>Scene Memes Login</h1>
+        </div>
+        <div id="user info">
+            <div id = "credentials">
+                <p>Username: 
+                    <input type="text" id="username">
+                </p>
+                <p>Password
+                    <input type="text" id="password">
+                </p>
+                <a href="mainpage.html">
+                    <button type="button" id="submit">Submit</button>
+                </a>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>
+                <a href="createaccount.html">
+                    <button type="button" id="create">Create Account</button>
+                </a>
             </p>
             <p>
-                Your password must include a... 
-                <ol>
-                    <dt id="HasSymbol">&check; Symbol</dt>
-                    <dt id="HasLowercaseLetter">&#9747; Lowercase letter</dt>
-                    <dt id="HasUpperLetter">&#9747; Capital Letter</dt>
-                    <dt id="HasNumber">&#9747; Number</dt>
-                </ol>
+                <button type="button" id="forgot">Forgot Password</button>
             </p>
-            <p>Password: 
-                <input type="password" id="Password"></input><br>
-                <div id="PasswordStrength">Weak</div>
-            </p>
-            <button type="button" id="SubmitButton" onsubmit=""> 
-                Submit
-            </button>
         </div>
-    </div>
-    <div id="footer">
-
-    </div>
-</body>
+    </body>
 </html>
