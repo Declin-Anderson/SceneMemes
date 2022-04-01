@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +7,145 @@
     <title>Scene Memes</title>
 </head>
 <body>
-    <div id="header" style="text-align: center;">
+    <div id="TitleHeader">
         <h1>Scene Memes</h1>
     </div>
     
     <div id="content">
         <div id= "SignUp">
-            <p>Email: 
+            <h3>Register</h3>
+
+            <!---Email Input-->
+            <p>
+                <label>Email: </label>
                 <input type="email" id="EmailAddress"></input>
             </p>
-            <p>Username: 
+            <!---Username Input-->
+            <p>
+                <label>Username: </label>
                 <input type="text" id="Username"></input>
             </p>
-            <p>Date of Birth: 
+            <!---Date of birth Input-->
+            <p>
+                <label>Date of Birth: </label>
                 <input type="date" id="BirthDate"></input>
             </p>
+            <!---Password requirement-->
             <p>
                 Your password must include a... 
-                <ol>
-                    <dt id="HasSymbol">&check; Symbol</dt>
-                    <dt id="HasLowercaseLetter">&#9747; Lowercase letter</dt>
-                    <dt id="HasUpperLetter">&#9747; Capital Letter</dt>
-                    <dt id="HasNumber">&#9747; Number</dt>
-                </ol>
+                <ul>
+                    <li id="HasSymbol">Symbol</li>
+                    <li id="HasLowercaseLetter">Lowercase letter</li>
+                    <li id="HasUpperLetter">Capital Letter</li>
+                    <li id="HasNumber">Number</li>
+                </ul>
             </p>
-            <p>Password: 
+            <!---password Input-->
+            <p>
+                <label>Password:</label>
                 <input type="password" id="Password"></input><br>
                 <div id="PasswordStrength">Weak</div>
             </p>
-            <button type="button" id="SubmitButton" onsubmit=""> 
+            
+             <button type="button" id="BackButton" href = "index.html"> 
+                Back
+            </button>
+            <button type="button" id="SubmitButton" onclick="EnterFunction()"> 
                 Submit
             </button>
-        </div>
-    </div>
-    <div id="footer">
 
+           
+
+            <script>
+                // checks the str for uppercase letters
+                function CheckUpperCase (str){
+                    const pattern = new RegExp("[A-Z]");
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                } 
+
+                // checks the str for lower case letters
+                function CheckLowerCase (str){
+                    const pattern = new RegExp("[a-z]");
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                }
+
+                // checks the str for numbers
+                function CheckNumber (str){
+                    const pattern = new RegExp("[0-9]");
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                }
+                
+                // checks the str for numbers
+                function CheckSymbol (str){
+                    const pattern = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                }
+                
+                var SymbolPhrase = document.getElementById('HasSymbol');
+                var LowercasePhrase = document.getElementById('HasLowercaseLetter');
+                var UppercasePhrase = document.getElementById('HasUpperLetter');
+                var NumberPhrase = document.getElementById('HasNumber');
+
+                // Gets the back button
+                var BackBtn = document.getElementById("BackButton");
+
+                // Get the submit button
+                var SubmitBtn = document.getElementById("SubmitButton");
+
+                // Function that gets called when submit button is clicked
+                function EnterFunction () {
+                    var newPassword = document.getElementById("Password").value;
+                    // sets the symbol requirement
+                    if (CheckSymbol(newPassword)) {
+                        SymbolPhrase.innerHTML = "&check; Symbol";
+                    } else {
+                        SymbolPhrase.innerHTML = "&#9747; Symbol";
+                    }
+                    // sets the symbol requirement
+                    if (CheckLowerCase(newPassword)) {
+                        LowercasePhrase.innerHTML = "&check; Lowercase letter";
+                    } else {
+                        LowercasePhrase.innerHTML = "&#9747; Lowercase letter";
+                    }
+                    // sets the symbol requirement
+                    if (CheckUpperCase(newPassword)) {
+                        UppercasePhrase.innerHTML = "&check; Capital Letter";
+                    } else {
+                        UppercasePhrase.innerHTML = "&#9747; Capital Letter";
+                    }
+                    // sets the symbol requirement
+                    if (CheckNumber(newPassword)) {
+                        NumberPhrase.innerHTML = "&check; Number";
+                    } else {
+                        NumberPhrase.innerHTML = "&#9747; Number";
+                    }
+                    if (CheckNumber(newPassword) && CheckUpperCase(newPassword) && CheckLowerCase(newPassword) && CheckSymbol(newPassword)) {
+                        location.href = "mainpage.html";
+                    }
+                }
+
+            </script>
+        </div>
     </div>
 </body>
 </html>
