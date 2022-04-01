@@ -43,7 +43,7 @@
             <!---password Input-->
             <p>
                 <label>Password:</label>
-                <input type="password" id="Password"></input><br>
+                <input type="password" id="Password" oninput="UpdateTier()"></input><br>
                 <div id="PasswordStrength">Weak</div>
             </p>
             
@@ -103,6 +103,9 @@
                     return pattern.test(str);
                 }
                 
+                var passwordObj = document.getElementById("Password");
+                var passwordStrengthObj = document.getElementById("PasswordStrength");
+
                 var SymbolPhrase = document.getElementById('HasSymbol');
                 var LowercasePhrase = document.getElementById('HasLowercaseLetter');
                 var UppercasePhrase = document.getElementById('HasUpperLetter');
@@ -114,32 +117,71 @@
                 // Get the submit button
                 var SubmitBtn = document.getElementById("SubmitButton");
 
+                // changes the strength of the password
+                function UpdateTier () {
+                    var strength = passwordObj.value.length;
+                    var newPassword = passwordObj.value;
+                    if (CheckSymbol(newPassword)) {
+                        strength++;
+                    }
+                    // sets the symbol requirement
+                    if (CheckLowerCase(newPassword)) {
+                        strength++;                    
+                    }
+                    // sets the symbol requirement
+                    if (CheckUpperCase(newPassword)) {
+                        strength++;                    
+                    }
+                    // sets the symbol requirement
+                    if (CheckNumber(newPassword)) {
+                        strength++;
+                    }
+                    if (strength < 4) {
+                        PasswordStrength.innerHTML = "Weak";
+                        PasswordStrength.style.color = "red";
+                    } else if (strength < 9){
+                        PasswordStrength.innerHTML = "Normal";
+                        PasswordStrength.style.color = "orange";
+                    } else if (strength >= 9) {
+                        PasswordStrength.innerHTML = "Strong";
+                        PasswordStrength.style.color = "lightgreen";
+                    }
+                }
+
                 // Function that gets called when submit button is clicked
                 function EnterFunction () {
-                    var newPassword = document.getElementById("Password").value;
+                    var newPassword = passwordObj.value;
                     // sets the symbol requirement
                     if (CheckSymbol(newPassword)) {
                         SymbolPhrase.innerHTML = "&check; Symbol";
+                        SymbolPhrase.style.color = "green";
                     } else {
                         SymbolPhrase.innerHTML = "&#9747; Symbol";
+                        SymbolPhrase.style.color = "red";
                     }
                     // sets the symbol requirement
                     if (CheckLowerCase(newPassword)) {
                         LowercasePhrase.innerHTML = "&check; Lowercase letter";
+                        LowercasePhrase.style.color = "green";
                     } else {
                         LowercasePhrase.innerHTML = "&#9747; Lowercase letter";
+                        LowercasePhrase.style.color = "red";
                     }
                     // sets the symbol requirement
                     if (CheckUpperCase(newPassword)) {
                         UppercasePhrase.innerHTML = "&check; Capital Letter";
+                        UppercasePhrase.style.color = "green";
                     } else {
                         UppercasePhrase.innerHTML = "&#9747; Capital Letter";
+                        UppercasePhrase.style.color = "red";
                     }
                     // sets the symbol requirement
                     if (CheckNumber(newPassword)) {
                         NumberPhrase.innerHTML = "&check; Number";
+                        NumberPhrase.style.color = 'green';
                     } else {
                         NumberPhrase.innerHTML = "&#9747; Number";
+                        NumberPhrase.style.color = "red";
                     }
                     if (CheckNumber(newPassword) && CheckUpperCase(newPassword) && CheckLowerCase(newPassword) && CheckSymbol(newPassword)) {
                         location.href = "mainpage.html";

@@ -14,13 +14,15 @@
                 <nav>
                     <!--This is the post meme button that creates a popup when clicked-->
                     <button id="postMeme">Post Meme</button>
+                    <!--This is the name of the website-->
+                    <a id="titleName">Scene Meme</a>
                     <!--This is for pressing on the My Account button, it will drop down a menu-->
                     <div class = "dropdown" style = "float: right;">
                         <button>My Account</button>
                         <div class="dropdown-content">
                             <a href="mainpage.html">Meme Zone</a>
                             <a href="gallery.html">My Gallery</a>
-                            <a>Account Info</a>
+                            <a href="myaccount.html">Account Info</a>
                             <a href="index.html">Logout</a>
                         </div>
                     </div>
@@ -49,8 +51,31 @@
                     <!--Button for the user to to select an image-->
                     <button style="width: 200px; height: 60px; font-size: 20px;">Select an Image</button>
                     <!--Button for posting the user's meme-->
-                    <button style="float: right; width: 200px; height: 60px; font-size: 20px;">Post</button>
+                    <button type ="button" style="float: right; width: 200px; height: 60px; font-size: 20px;" onclick="postMemePost()">Post</button>
                 </div>
+            </div>
+            <!--A list that holds the current memes that are in the scene-->
+            <ul style="list-style: none">
+                <!--Header for the page-->
+                <li>
+                    <h1>The Meme Zone</h1>
+                    <br>
+                    <br>
+                    <br>
+                </li>
+                <li id="hiddenPost" style = "display: none;">
+                    <figure>
+                        <img src="https://www.ladbible.com/cdn-cgi/image/width=1200,quality=70,format=jpeg,fit=contain,dpr=1/https%3A%2F%2Fs3-images.ladbible.com%2Fs3%2Fcontent%2Fbd9f19995fe03288211239f5ac6e093f.png">
+                        <figcaption>
+                            Testing Post
+                            <br>
+                            By Scene Memes Team
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
                 <!--Script for the popup-->
                 <script>
                     // Get the modal
@@ -78,10 +103,13 @@
                         modal.style.display = "none";
                     }
                     }
+
+                    function postMemePost()
+                    {
+                        hiddenPost.style.display = "block";
+                        modal.style.display ="none";
+                    }
                 </script>
-            </div>
-            <!--A list that holds the current memes that are in the scene-->
-            <ul style="list-style: none">
                 <li>
                     <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery, example with username-->
                     <figure>
