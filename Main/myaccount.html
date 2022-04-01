@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Referencing the css file for style-->
+        <link rel="stylesheet" href="CSS/mainpage.css">
+        <title>Scene Memes</title>
+    </head>
+    <body>
+        <div>
+            <!--This holds the bar at the top of screen and the contents in it-->
+            <div id="navigation-bar">
+                <nav>
+                    <!--This is the name of the website-->
+                    <a id="titleName">Scene Meme</a>
+                    <!--This is for pressing on the My Account button, it will drop down a menu-->
+                    <div class = "dropdown" style = "float: right;">
+                        <button>My Account</button>
+                        <div class="dropdown-content">
+                            <a href="mainpage.html">Meme Zone</a>
+                            <a href="gallery.html">My Gallery</a>
+                            <a href="myaccount.html">Account Info</a>
+                            <a href="index.html">Logout</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--Holds the main section of the page with the information-->
+        <div id="more-view">
+            <ul style="list-style: none;">
+                <li>
+                    <!--The label for the page so the user knows where they are-->
+                    <h1>My Profile</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </li>
+                <li>
+                    <!--Makes a little box with the image and a caption, also holds a remove button-->
+                    <figure>
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+                        <figcaption>Username
+                            <br>
+                            <button>Remove Account</button>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
