@@ -136,10 +136,13 @@
                     }
                     if (strength < 4) {
                         PasswordStrength.innerHTML = "Weak";
+                        PasswordStrength.style.color = "red";
                     } else if (strength < 9){
                         PasswordStrength.innerHTML = "Normal";
+                        PasswordStrength.style.color = "orange";
                     } else if (strength >= 9) {
                         PasswordStrength.innerHTML = "Strong";
+                        PasswordStrength.style.color = "lightgreen";
                     }
                 }
 
@@ -149,26 +152,34 @@
                     // sets the symbol requirement
                     if (CheckSymbol(newPassword)) {
                         SymbolPhrase.innerHTML = "&check; Symbol";
+                        SymbolPhrase.style.color = "green";
                     } else {
                         SymbolPhrase.innerHTML = "&#9747; Symbol";
+                        SymbolPhrase.style.color = "red";
                     }
                     // sets the symbol requirement
                     if (CheckLowerCase(newPassword)) {
                         LowercasePhrase.innerHTML = "&check; Lowercase letter";
+                        LowercasePhrase.style.color = "green";
                     } else {
                         LowercasePhrase.innerHTML = "&#9747; Lowercase letter";
+                        LowercasePhrase.style.color = "red";
                     }
                     // sets the symbol requirement
                     if (CheckUpperCase(newPassword)) {
                         UppercasePhrase.innerHTML = "&check; Capital Letter";
+                        UppercasePhrase.style.color = "green";
                     } else {
                         UppercasePhrase.innerHTML = "&#9747; Capital Letter";
+                        UppercasePhrase.style.color = "red";
                     }
                     // sets the symbol requirement
                     if (CheckNumber(newPassword)) {
                         NumberPhrase.innerHTML = "&check; Number";
+                        NumberPhrase.style.color = 'green';
                     } else {
                         NumberPhrase.innerHTML = "&#9747; Number";
+                        NumberPhrase.style.color = "red";
                     }
                     if (CheckNumber(newPassword) && CheckUpperCase(newPassword) && CheckLowerCase(newPassword) && CheckSymbol(newPassword)) {
                         location.href = "mainpage.html";
