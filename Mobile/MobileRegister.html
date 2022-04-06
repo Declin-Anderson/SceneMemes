@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/main.css">
+    <title>Scene Memes</title>
+</head>
+<body>
+    <div id="TitleHeader">
+        <h1 style="text-align: center;">Scene Memes</h1>
+    </div>
+    
+    <div id="content" style="margin-left: 5%;">
+        <div id= "SignUp">
+            <h3>Register</h3>
+            <!---Input Via socials-->
+            <button>Facebook</button>
+            <button>Twitter</button>
+            <!---Email Input-->
+            <p>
+                <label>Email: </label>
+                <input type="email" id="EmailAddress"></input>
+            </p>
+            <!---Username Input-->
+            <p>
+                <label>Username: </label>
+                <input type="text" id="Username"></input>
+            </p>
+            <!---Date of birth Input-->
+            <p>
+                <label>Date of Birth: </label>
+                <input type="date" id="BirthDate"></input>
+            </p>
+            <!---Password requirement-->
+            <p>
+                Your password must include a... 
+                <ul>
+                    <li id="HasSymbol">Symbol</li>
+                    <li id="HasLowercaseLetter">Lowercase letter</li>
+                    <li id="HasUpperLetter">Capital Letter</li>
+                    <li id="HasNumber">Number</li>
+                </ul>
+            </p>
+            <!---password Input-->
+            <p>
+                <label>Password:</label>
+                <input type="password" id="Password" oninput="UpdateTier()"></input><br>
+                <div id="PasswordStrength">Weak</div>
+            </p>
+            
+             <button type="button" id="BackButton" href = "index.html"> 
+                Back
+            </button>
+            <button type="button" id="SubmitButton" onclick="EnterFunction()"> 
+                Submit
+            </button>
+
+           
+
+            <script>
+                // checks the str for uppercase letters
+                function CheckUpperCase (str){
+                    const pattern = new RegExp("[A-Z]");
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                } 
+
+                // checks the str for lower case letters
+                function CheckLowerCase (str){
+                    const pattern = new RegExp("[a-z]");
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                }
+
+                // checks the str for numbers
+                function CheckNumber (str){
+                    const pattern = new RegExp("[0-9]");
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                }
+                
+                // checks the str for numbers
+                function CheckSymbol (str){
+                    const pattern = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                    // Check if string is null or empty
+                    if (!str || str.length == 0) {
+                        return false;
+                    }
+                    // Check if the string has anything in the pattern
+                    return pattern.test(str);
+                }
+                
+                var passwordObj = document.getElementById("Password");
+                var passwordStrengthObj = document.getElementById("PasswordStrength");
+
+                var SymbolPhrase = document.getElementById('HasSymbol');
+                var LowercasePhrase = document.getElementById('HasLowercaseLetter');
+                var UppercasePhrase = document.getElementById('HasUpperLetter');
+                var NumberPhrase = document.getElementById('HasNumber');
+
+                // Gets the back button
+                var BackBtn = document.getElementById("BackButton");
+
+                // Get the submit button
+                var SubmitBtn = document.getElementById("SubmitButton");
+
+                // changes the strength of the password
+                function UpdateTier () {
+                    var strength = passwordObj.value.length;
+                    var newPassword = passwordObj.value;
+                    if (CheckSymbol(newPassword)) {
+                        strength++;
+                    }
+                    // sets the symbol requirement
+                    if (CheckLowerCase(newPassword)) {
+                        strength++;                    
+                    }
+                    // sets the symbol requirement
+                    if (CheckUpperCase(newPassword)) {
+                        strength++;                    
+                    }
+                    // sets the symbol requirement
+                    if (CheckNumber(newPassword)) {
+                        strength++;
+                    }
+                    if (strength < 4) {
+                        PasswordStrength.innerHTML = "Weak";
+                        PasswordStrength.style.color = "red";
+                    } else if (strength < 9){
+                        PasswordStrength.innerHTML = "Normal";
+                        PasswordStrength.style.color = "orange";
+                    } else if (strength >= 9) {
+                        PasswordStrength.innerHTML = "Strong";
+                        PasswordStrength.style.color = "lightgreen";
+                    }
+                }
+
+                // Function that gets called when submit button is clicked
+                function EnterFunction () {
+                    var newPassword = passwordObj.value;
+                    // sets the symbol requirement
+                    if (CheckSymbol(newPassword)) {
+                        SymbolPhrase.innerHTML = "&check; Symbol";
+                        SymbolPhrase.style.color = "green";
+                    } else {
+                        SymbolPhrase.innerHTML = "&#9747; Symbol";
+                        SymbolPhrase.style.color = "red";
+                    }
+                    // sets the symbol requirement
+                    if (CheckLowerCase(newPassword)) {
+                        LowercasePhrase.innerHTML = "&check; Lowercase letter";
+                        LowercasePhrase.style.color = "green";
+                    } else {
+                        LowercasePhrase.innerHTML = "&#9747; Lowercase letter";
+                        LowercasePhrase.style.color = "red";
+                    }
+                    // sets the symbol requirement
+                    if (CheckUpperCase(newPassword)) {
+                        UppercasePhrase.innerHTML = "&check; Capital Letter";
+                        UppercasePhrase.style.color = "green";
+                    } else {
+                        UppercasePhrase.innerHTML = "&#9747; Capital Letter";
+                        UppercasePhrase.style.color = "red";
+                    }
+                    // sets the symbol requirement
+                    if (CheckNumber(newPassword)) {
+                        NumberPhrase.innerHTML = "&check; Number";
+                        NumberPhrase.style.color = 'green';
+                    } else {
+                        NumberPhrase.innerHTML = "&#9747; Number";
+                        NumberPhrase.style.color = "red";
+                    }
+                    if (CheckNumber(newPassword) && CheckUpperCase(newPassword) && CheckLowerCase(newPassword) && CheckSymbol(newPassword)) {
+                        location.href = "MobileMain.html";
+                    }
+                }
+
+            </script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Referencing the css file for style-->
+        <link rel="stylesheet" href="CSS/mainpage.css">
+        <title>Scene Memes</title>
+    </head>
+    <body>
+        <div>
+             <!--This holds the bar at the top of screen and the contents in it-->
+            <div id="navigation-bar">
+                <nav>
+                    <!--This is the post meme button that creates a popup when clicked-->
+                    <button id="postMeme">Post Meme</button>
+                    <!--This is the name of the website-->
+                    <a id="titleName">Scene Meme</a>
+                    <!--This is for pressing on the My Account button, it will drop down a menu-->
+                    <div class = "dropdown" style = "float: right;">
+                        <button>My Account</button>
+                        <div class="dropdown-content">
+                            <a href="MobileMain.html">Meme Zone</a>
+                            <a href="MobileGallery.html">My Gallery</a>
+                            <a href="myaccount.html">Account Info</a>
+                            <a href="index.html">Logout</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--Holds the main section of the page with the information-->
+        <div id="more-view">
+            <!-- The Popup -->
+            <div id="postMemeWindow" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <!--Creating the X for closes the popup-->
+                    <span class="close">&times;</span>
+                    <!--Makes a checkbox for if the user wants to include their name-->
+                    <input type="checkbox" id="username" name="username" value="annyomous" style = "width: 30px; height: 30px;">
+                    <label for="username" style = "font-size: 40px;"> I want my username attached</label>
+                    <br>
+                    <br>
+                    <!--The place for the user to enter their description for the post-->
+                    <label for="description" style = "font-size: 30px;">Post Description:</label>
+                    <br>
+                    <textarea id="description" name="description" style="width: 90%; height: 60%;" rows="30" cols="10"></textarea>
+                    <br>
+                    <br>
+                    <!--Button for the user to to select an image-->
+                    <button style="width: 200px; height: 60px; font-size: 20px;">Select an Image</button>
+                    <!--Button for posting the user's meme-->
+                    <button type ="button" style="float: right; width: 200px; height: 60px; font-size: 20px;" onclick="postMemePost()">Post</button>
+                </div>
+            </div>
+            <!--A list that holds the current memes that are in the scene-->
+            <ul style="list-style: none">
+                <!--Header for the page-->
+                <li>
+                    <h1>The Meme Zone</h1>
+                    <br>
+                    <br>
+                    <br>
+                </li>
+                <li id="hiddenPost" style = "display: none;">
+                    <figure>
+                        <img src="https://www.ladbible.com/cdn-cgi/image/width=1200,quality=70,format=jpeg,fit=contain,dpr=1/https%3A%2F%2Fs3-images.ladbible.com%2Fs3%2Fcontent%2Fbd9f19995fe03288211239f5ac6e093f.png">
+                        <figcaption>
+                            Testing Post
+                            <br>
+                            By Scene Memes Team
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <!--Script for the popup-->
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById("postMemeWindow");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("postMeme");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks on the button, open the modal
+                    btn.onclick = function() {
+                    modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                    modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                    }
+
+                    function postMemePost()
+                    {
+                        hiddenPost.style.display = "block";
+                        modal.style.display ="none";
+                    }
+                </script>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery, example with username-->
+                    <figure>
+                        <img src="https://im.indiatimes.in/content/2022/Mar/memes-will-smith-chris-rock_6241753870cb8.jpg?w=1092&h=558&cc=1">
+                        <figcaption>
+                            Me at Thanksgiving!
+                            <br>
+                            By Dank Master
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                    <figure>
+                        <img src="https://pbs.twimg.com/media/FO6crICVUAIfS3N?format=jpg&name=360x360">
+                        <figcaption>Watch this sick catch!
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                    <figure>
+                        <img src="https://pbs.twimg.com/media/FO6crLZUcAADgwD?format=jpg&name=360x360">
+                        <figcaption>Will Smith going crazy in VR!
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                    <figure>
+                        <img src="https://i0.wp.com/mediachomp.com/wp-content/uploads/2022/03/will-smith-oscars-slap-memes-02.jpg?resize=650%2C495&ssl=1">
+                        <figcaption>Willman and Chrisbin
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery, example with username-->
+                    <figure>
+                        <img src="https://pbs.twimg.com/media/FO6crLcVUAINPBD.jpg">
+                        <figcaption>When your overleveled for the boss 
+                            <br>
+                            By Willist Smithist
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                    <figure>
+                        <img src="https://i.kym-cdn.com/photos/images/original/002/335/853/29b.jpg">
+                        <figcaption>Yo when this anime dropping!
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>/figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                    <figure>
+                        <img src="https://www.wargamer.com/wp-content/uploads/2022/03/magic-the-gathering-will-smith-oscars-slap-classic.jpg">
+                        <figcaption>Just got this new card that I'm adding to my deck
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                    <figure>
+                        <img src="https://cdn.kapwing.com/collections/video_image-SkLAEPjeKk.jpeg">
+                        <figcaption>Just when the weekend is about to get good!
+                            <br>
+                            <button>Report</button>
+                            <button>Save</button>
+                        </figcaption>
+                    </figure>
