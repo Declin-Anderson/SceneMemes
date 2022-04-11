@@ -15,23 +15,41 @@
         <div id= "SignUp">
             <h3>Register</h3>
             <!---Input Via socials-->
-            <button>Facebook</button>
-            <button>Twitter</button>
+            <a href = "MobileMain.html"><button >Facebook</button></a>
+            <a href = "MobileMain.html"><button>Twitter</button></a>
+            <button onclick="addEmailEntry()">Email</button>
+            <script>
+                const EmailEntry = '<p>'  +
+                    '<label>Email: </label>' +
+                    '<input type="email" id="EmailAddress"></input>' +
+                '</p>' +
+                '<!---Username Input-->' +
+                '<p>' +
+                    '<label>Username: </label>' +
+                    '<input type="text" id="Username"></input>' +
+                '</p>' +
+                '<!---Date of birth Input-->' +
+                '<p>' +
+                    '<label>Date of Birth: </label>' +
+                    '<input type="date" id="BirthDate"></input>' +
+                '</p>';
+
+                function addEmailEntry() {
+                    document.getElementById("EmailSignUp").innerHTML = EmailEntry;
+                }
+
+                function FacebookUse() {
+
+                }
+
+                function TwitterUse (){
+
+                }
+            </script>
             <!---Email Input-->
-            <p>
-                <label>Email: </label>
-                <input type="email" id="EmailAddress"></input>
-            </p>
-            <!---Username Input-->
-            <p>
-                <label>Username: </label>
-                <input type="text" id="Username"></input>
-            </p>
-            <!---Date of birth Input-->
-            <p>
-                <label>Date of Birth: </label>
-                <input type="date" id="BirthDate"></input>
-            </p>
+            <div id="EmailSignUp">
+
+            </div>
             <!---Password requirement-->
             <p>
                 Your password must include a... 
@@ -55,9 +73,7 @@
             <button type="button" id="SubmitButton" onclick="EnterFunction()"> 
                 Submit
             </button>
-
-           
-
+            
             <script>
                 // checks the str for uppercase letters
                 function CheckUpperCase (str){
