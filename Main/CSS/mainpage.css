@@ -114,7 +114,8 @@ figure {
   border-width: 5px;
   margin-left: auto;
   margin-right:auto;
-  width: 45%;
+  width: 90%;
+  /*width: 45%;*/
 }
 
 /*Setting up how the caption looks for the post squares*/
