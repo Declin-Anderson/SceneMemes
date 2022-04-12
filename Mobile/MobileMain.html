@@ -32,26 +32,31 @@
         <!--Holds the main section of the page with the information-->
         <div id="more-view">
             <!-- The Popup -->
-            <div id="postMemeWindow" class="modal">
+            <div id="postMemeWindow" style="text-align: center;" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content">
                     <!--Creating the X for closes the popup-->
                     <span class="close">&times;</span>
-                    <!--Makes a checkbox for if the user wants to include their name-->
-                    <input type="checkbox" id="username" name="username" value="annyomous" style = "width: 30px; height: 30px;">
-                    <label for="username" style = "font-size: 40px;"> I want my username attached</label>
+                    <!--Button for the user to to select an image-->
+                    <button style="width: 200px; height: 60px; font-size: 20px; margin-top: 5%;">Select an Image</button>
                     <br>
                     <br>
                     <!--The place for the user to enter their description for the post-->
                     <label for="description" style = "font-size: 30px;">Post Description:</label>
                     <br>
-                    <textarea id="description" name="description" style="width: 90%; height: 60%;" rows="30" cols="10"></textarea>
+                    <textarea id="description" name="description" rows="10" cols="10"></textarea>
                     <br>
                     <br>
-                    <!--Button for the user to to select an image-->
-                    <button style="width: 200px; height: 60px; font-size: 20px;">Select an Image</button>
+                    <div style="text-align: left; margin-left: 5%;">
+                        <!--Makes a checkbox for if the user wants to include their name-->
+                        <input type="checkbox" id="username" name="username" value="annyomous" style = "width: 30px; height: 30px;">
+                        <label for="username" style = "font-size: 30px;"> Attach Username</label>
+                    </div>
+                    <br>
+                    <br>
                     <!--Button for posting the user's meme-->
-                    <button type ="button" style="float: right; width: 200px; height: 60px; font-size: 20px;" onclick="postMemePost()">Post</button>
+                    <button type ="button" id="PostButton" onclick="postMemePost()">Post</button>
+                    
                 </div>
             </div>
             <!--A list that holds the current memes that are in the scene-->

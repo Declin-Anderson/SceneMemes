@@ -189,7 +189,7 @@ th, td {
   /*padding: 20px;*/
   border: 5px solid black;
   width: 90%; /* Could be more or less, depending on screen size */
-  height: 50%;
+  height: 90%;
 }
 
 /* The Close Button */
@@ -209,4 +209,19 @@ th, td {
 
 ul {
   padding: 0%;
+}
+
+#description {
+  width: 90%;
+  height: 40%;;
+  text-align: left;
+}
+
+#PostButton {
+  
+  /*float: right;*/
+  width: 200px; 
+  height: 60px; 
+  font-size: 20px;
+  text-align: center;
 }
