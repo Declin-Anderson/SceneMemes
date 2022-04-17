@@ -1,14 +1,11 @@
 /*Hiding the scrollbar for the mainpage since its in the main panel*/
 html {
-  overflow: hidden;
-  height: 100%;
+  overflow: auto;
 }
 
 /*Hiding the scrollbar and removing whitespace around the edges*/
 body {
   overflow: hidden;
-  margin: 0;
-  height: 100%;
 }
 
 /*Formatting the header of the mainpage*/
