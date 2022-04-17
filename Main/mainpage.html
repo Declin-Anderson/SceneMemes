@@ -12,20 +12,16 @@
              <!--This holds the bar at the top of screen and the contents in it-->
             <div id="navigation-bar">
                 <nav>
-                    <!--This is the post meme button that creates a popup when clicked-->
-                    <button id="postMeme">Post Meme</button>
                     <!--This is the name of the website-->
-                    <a id="titleName">Scene Meme</a>
-                    <!--This is for pressing on the My Account button, it will drop down a menu-->
-                    <div class = "dropdown" style = "float: right;">
-                        <button>My Account</button>
-                        <div class="dropdown-content">
-                            <a href="mainpage.html">Meme Zone</a>
-                            <a href="gallery.html">My Gallery</a>
-                            <a href="myaccount.html">Account Info</a>
-                            <a href="index.html">Logout</a>
-                        </div>
-                    </div>
+                    <a id="titleName" style="float:left; width:13%">Scene Meme</a>
+                    <a href="mainpage.html" style="float:left; width:10%"><button>Meme Zone</button></a>
+                    <!--This is the post meme button that creates a popup when clicked-->
+                    <a style="padding-left: 22%;"><button id="postMeme">Post Meme</button></a>
+                    <!--This is for pressing on the My Account button-->
+                    <a href="myaccount.html" style="float:right; width:4%">
+                        <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="My Profile" style="height: 60px; width: 60px; padding-top:2px;">
+                    </a>
+                    <a href="gallery.html" style="float:right; width:11%"><button>My Gallery</button></a>
                 </nav>
             </div>
         </div>
@@ -34,197 +30,220 @@
             <!-- The Popup -->
             <div id="postMemeWindow" class="modal">
                 <!-- Modal content -->
-                <div class="modal-content">
+                <div class="modal-content" style="width: 600px; height: 300px">
                     <!--Creating the X for closes the popup-->
                     <span class="close">&times;</span>
-                    <!--Makes a checkbox for if the user wants to include their name-->
-                    <input type="checkbox" id="username" name="username" value="annyomous" style = "width: 30px; height: 30px;">
-                    <label for="username" style = "font-size: 40px;"> I want my username attached</label>
+                    <!--Button for the user to to select an image-->
+                    <button style="width: 200px; height: 60px; font-size: 20px;">Select or Drag an Image</button>
                     <br>
                     <br>
                     <!--The place for the user to enter their description for the post-->
                     <label for="description" style = "font-size: 30px;">Post Description:</label>
                     <br>
-                    <textarea id="description" name="description" style="width: 90%; height: 60%;" rows="30" cols="10"></textarea>
+                    <textarea id="description" name="description" style="width: 90%; height: 20%;" rows="30" cols="10"></textarea>
                     <br>
                     <br>
-                    <!--Button for the user to to select an image-->
-                    <button style="width: 200px; height: 60px; font-size: 20px;">Select an Image</button>
+                    <!--Makes a checkbox for if the user wants to include their name-->
+                    <input type="checkbox" id="username" name="username" value="annyomous" style = "width: 30px; height: 30px;">
+                    <label for="username" style = "font-size: 30px;"> I want my username attached</label>
                     <!--Button for posting the user's meme-->
-                    <button type ="button" style="float: right; width: 200px; height: 60px; font-size: 20px;" onclick="postMemePost()">Post</button>
+                    <button type ="button" style="float: right; width: 150px; height: 40px; font-size: 20px;" onclick="postMemePost()">Post</button>
                 </div>
             </div>
-            <!--A list that holds the current memes that are in the scene-->
-            <ul style="list-style: none">
-                <!--Header for the page-->
-                <li>
-                    <h1>The Meme Zone</h1>
-                    <br>
-                    <br>
-                    <br>
-                </li>
-                <li id="hiddenPost" style = "display: none;">
-                    <figure>
-                        <img src="https://www.ladbible.com/cdn-cgi/image/width=1200,quality=70,format=jpeg,fit=contain,dpr=1/https%3A%2F%2Fs3-images.ladbible.com%2Fs3%2Fcontent%2Fbd9f19995fe03288211239f5ac6e093f.png">
-                        <figcaption>
-                            Testing Post
+            <div>
+                <div style="position: fixed; padding-top: 15%; right: 20px; width: 500px">
+                    <ul class="cloud" role="navigation" aria-label="Webdev word cloud;">
+                        <li><a href="#" data-weight="4">Will Smith</a></li>
+                        <li><a href="#" data-weight="1">Minecraft</a></li>
+                        <li><a href="#" data-weight="5">Elden Ring</a></li>
+                        <li><a href="#" data-weight="6">News</a></li>
+                        <li><a href="#" data-weight="4">Breaking Bad</a></li>
+                        <li><a href="#" data-weight="5">GIF</a></li>
+                        <li><a href="#" data-weight="6">BottomText</a></li>
+                        <li><a href="#" data-weight="2">Elon Musk</a></li>
+                        <li><a href="#" data-weight="9">Tiktok</a></li>
+                        <li><a href="#" data-weight="3">New</a></li>
+                        <li><a href="#" data-weight="7">Edgy</a></li>
+                      </ul>
+                </div>
+                <div style="width: 30%; padding-top: 10%; position:fixed; left: 40px;">
+                    <p style="font-size: 35px;">Current Zone: Wisconsin</p>
+                    <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Map_of_USA_WI.svg/800px-Map_of_USA_WI.svg.png" style="width: 400px; height: 200px">
+                </div>
+                <div>
+                    <!--A list that holds the current memes that are in the scene-->
+                    <ul style="list-style: none">                
+                        <!--Header for the page-->
+                        <li>
+                            <h1>The Meme Zone</h1>
                             <br>
-                            By Scene Memes Team
                             <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <!--Script for the popup-->
-                <script>
-                    // Get the modal
-                    var modal = document.getElementById("postMemeWindow");
+                            <br>
+                        </li>
+                        <li id="hiddenPost" style = "display: none;">
+                            <figure>
+                                <img src="https://www.ladbible.com/cdn-cgi/image/width=1200,quality=70,format=jpeg,fit=contain,dpr=1/https%3A%2F%2Fs3-images.ladbible.com%2Fs3%2Fcontent%2Fbd9f19995fe03288211239f5ac6e093f.png">
+                                <figcaption>
+                                    Testing Post
+                                    <br>
+                                    By Scene Memes Team
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <!--Script for the popup-->
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById("postMemeWindow");
 
-                    // Get the button that opens the modal
-                    var btn = document.getElementById("postMeme");
+                            // Get the button that opens the modal
+                            var btn = document.getElementById("postMeme");
 
-                    // Get the <span> element that closes the modal
-                    var span = document.getElementsByClassName("close")[0];
+                            // Get the <span> element that closes the modal
+                            var span = document.getElementsByClassName("close")[0];
 
-                    // When the user clicks on the button, open the modal
-                    btn.onclick = function() {
-                    modal.style.display = "block";
-                    }
+                            // When the user clicks on the button, open the modal
+                            btn.onclick = function() {
+                            modal.style.display = "block";
+                            }
 
-                    // When the user clicks on <span> (x), close the modal
-                    span.onclick = function() {
-                    modal.style.display = "none";
-                    }
+                            // When the user clicks on <span> (x), close the modal
+                            span.onclick = function() {
+                            modal.style.display = "none";
+                            }
 
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                    }
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                            }
 
-                    function postMemePost()
-                    {
-                        hiddenPost.style.display = "block";
-                        modal.style.display ="none";
-                    }
-                </script>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery, example with username-->
-                    <figure>
-                        <img src="https://im.indiatimes.in/content/2022/Mar/memes-will-smith-chris-rock_6241753870cb8.jpg?w=1092&h=558&cc=1">
-                        <figcaption>
-                            Me at Thanksgiving!
-                            <br>
-                            By Dank Master
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://pbs.twimg.com/media/FO6crICVUAIfS3N?format=jpg&name=360x360">
-                        <figcaption>Watch this sick catch!
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://pbs.twimg.com/media/FO6crLZUcAADgwD?format=jpg&name=360x360">
-                        <figcaption>Will Smith going crazy in VR!
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://i0.wp.com/mediachomp.com/wp-content/uploads/2022/03/will-smith-oscars-slap-memes-02.jpg?resize=650%2C495&ssl=1">
-                        <figcaption>Willman and Chrisbin
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery, example with username-->
-                    <figure>
-                        <img src="https://pbs.twimg.com/media/FO6crLcVUAINPBD.jpg">
-                        <figcaption>When your overleveled for the boss 
-                            <br>
-                            By Willist Smithist
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://i.kym-cdn.com/photos/images/original/002/335/853/29b.jpg">
-                        <figcaption>Yo when this anime dropping!
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>/figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://www.wargamer.com/wp-content/uploads/2022/03/magic-the-gathering-will-smith-oscars-slap-classic.jpg">
-                        <figcaption>Just got this new card that I'm adding to my deck
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://cdn.kapwing.com/collections/video_image-SkLAEPjeKk.jpeg">
-                        <figcaption>Just when the weekend is about to get good!
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://pbs.twimg.com/media/FO6iRLpaQAQNqBk?format=jpg&name=900x900">
-                        <figcaption>It was super effective!
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
-                    <figure>
-                        <img src="https://pbs.twimg.com/media/FO58ZY9X0AEz5Ju?format=jpg&name=large">
-                        <figcaption>When you find him in your minecraft girlfriend's bed!
-                            <br>
-                            <button>Report</button>
-                            <button>Save</button>
-                        </figcaption>
-                    </figure>
-                </li>
-            </ul>
+                            function postMemePost()
+                            {
+                                hiddenPost.style.display = "block";
+                                modal.style.display ="none";
+                            }
+                        </script>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery, example with username-->
+                            <figure>
+                                <img src="https://im.indiatimes.in/content/2022/Mar/memes-will-smith-chris-rock_6241753870cb8.jpg?w=1092&h=558&cc=1">
+                                <figcaption>
+                                    Me at Thanksgiving!
+                                    <br>
+                                    By Dank Master
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://pbs.twimg.com/media/FO6crICVUAIfS3N?format=jpg&name=360x360">
+                                <figcaption>Watch this sick catch!
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://pbs.twimg.com/media/FO6crLZUcAADgwD?format=jpg&name=360x360">
+                                <figcaption>Will Smith going crazy in VR!
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://i0.wp.com/mediachomp.com/wp-content/uploads/2022/03/will-smith-oscars-slap-memes-02.jpg?resize=650%2C495&ssl=1">
+                                <figcaption>Willman and Chrisbin
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery, example with username-->
+                            <figure>
+                                <img src="https://pbs.twimg.com/media/FO6crLcVUAINPBD.jpg">
+                                <figcaption>When your overleveled for the boss 
+                                    <br>
+                                    By Willist Smithist
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://i.kym-cdn.com/photos/images/original/002/335/853/29b.jpg">
+                                <figcaption>Yo when this anime dropping!
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>/figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://www.wargamer.com/wp-content/uploads/2022/03/magic-the-gathering-will-smith-oscars-slap-classic.jpg">
+                                <figcaption>Just got this new card that I'm adding to my deck
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://cdn.kapwing.com/collections/video_image-SkLAEPjeKk.jpeg">
+                                <figcaption>Just when the weekend is about to get good!
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://pbs.twimg.com/media/FO6iRLpaQAQNqBk?format=jpg&name=900x900">
+                                <figcaption>It was super effective!
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <!--Makes a little box with an image, caption, and two buttons that report for obscene content and to save to gallery-->
+                            <figure>
+                                <img src="https://pbs.twimg.com/media/FO58ZY9X0AEz5Ju?format=jpg&name=large">
+                                <figcaption>When you find him in your minecraft girlfriend's bed!
+                                    <br>
+                                    <button>Report</button>
+                                    <button>Save</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </body>
 </html>

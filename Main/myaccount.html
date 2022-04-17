@@ -13,17 +13,13 @@
             <div id="navigation-bar">
                 <nav>
                     <!--This is the name of the website-->
-                    <a id="titleName">Scene Meme</a>
-                    <!--This is for pressing on the My Account button, it will drop down a menu-->
-                    <div class = "dropdown" style = "float: right;">
-                        <button>My Account</button>
-                        <div class="dropdown-content">
-                            <a href="mainpage.html">Meme Zone</a>
-                            <a href="gallery.html">My Gallery</a>
-                            <a href="myaccount.html">Account Info</a>
-                            <a href="index.html">Logout</a>
-                        </div>
-                    </div>
+                    <a id="titleName" style="float:left; width:13%">Scene Meme</a>
+                    <a href="mainpage.html" style="float:left; width:10%"><button>Meme Zone</button></a>
+                    <!--This is for pressing on the My Account button-->
+                    <a href="myaccount.html" style="float:right; width:4%">
+                        <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="My Profile" style="height: 60px; width: 60px; padding-top:2px;">
+                    </a>
+                    <a href="gallery.html" style="float:right; width:11%"><button>My Gallery</button></a>
                 </nav>
             </div>
         </div>
@@ -40,13 +36,14 @@
                 </li>
                 <li>
                     <!--Makes a little box with the image and a caption, also holds a remove button-->
-                    <figure>
-                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+                    <figure style="height: 600px; width: 600px">
+                        <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" style="height: 86%;">
                         <figcaption>Username
-                            <br>
-                            <button>Remove Account</button>
                         </figcaption>
                     </figure>
+                    <br>
+                    <a><button style="margin-left: 40%; float: left; background-color:#287f9e; color:#ffffff; font-family:Courier New; font-size:18px; width: 150px; height: 45px;">Remove Account</button></a>  
+                    <a href="index.html"><button style="margin-left: 5%; float:left; background-color:#287f9e; color:#ffffff; font-family:Courier New; font-size:18px; width: 150px; height: 45px;">Log Out</button></a>
                 </li>
             </ul>
         </div>
