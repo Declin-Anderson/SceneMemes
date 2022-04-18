@@ -24,23 +24,11 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-/*Formatting the Scene Meme text in the navigation bar*/
-#titleName {
-  font-size: 40px; 
-  font-family: Courier New;
-  color: white; 
-  margin: 0; 
-  position: absolute; 
-  left: 50%; 
-  top: 50%; 
-  margin-right: -50%; 
-  transform: translate(-50%, -50%);
-}
-
 /*Setting up the navigation to allow for it to allows stay at top of screen*/
 #navigation-bar {
   position: sticky;
   top: 0;
+  z-index: 1;
   background-color: black;
   height: 75px;
   width: 100%;
@@ -55,22 +43,43 @@ h1 {
 	font-family:Courier New;
 	font-size:18px;
 	font-weight:bold;
-  margin-top: 5px;
-	padding:20px 40px;
 	text-shadow:0px 2px 0px #5b6178;
+  height: 100%;
+  width: 100%;
+}
+
+#post-bar {
+  position: sticky;
+  bottom: 0;
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
+
+#post-bar button{
+	background-color:#16495c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:60px;
+	font-weight:bold;
+	text-shadow:0px 2px 0px #5b6178;
+  height: 70%;
+  width: 100%;
 }
 
 /*setting up the dropdown position*/
 .dropdown {
   display: inline-block;
-  position: relative;
+  position: absolute;
 }
 
 /*Setting up contents to not be shown until hovered over*/
 .dropdown-content {
   display: none;
   position: relative;
-  width: 100%;
+  width: 156.5%;
   overflow: auto;
   box-shadow: 0px 10px 10px 0px #16495c;
 }
@@ -164,8 +173,8 @@ caption {
 
 /*Table data settings*/
 th, td {
-  padding: 5px;
-  width: 33%;
+  height: 300px;
+  width: 850px;
 }
 
 .modal {
